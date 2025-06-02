@@ -9,7 +9,7 @@ const CharacterView = () => {
 
   useEffect(() => {
     axios
-      .get('https://rickandmortyapi.com/api/character/37')
+      .get('https://rickandmortyapi.com/api/character/1')
       .then((res) => setCharacter(res.data))
       .catch((err) => console.error('Error cargando personaje', err));
   }, []);

@@ -1,4 +1,4 @@
-import CharacterView from './src/views/Inicio'
+import CharacterView from './views/Inicio'
 import './App.css'
 
 function App() {
