@@ -1,64 +1,48 @@
-# 📦 Nombre del Proyecto
+# 🧬 Rick and Morty Explorer
 
-Aplicación frontend desarrollada en React.js que consume una API RESTful para mostrar y gestionar datos. Este proyecto está orientado a [descripción breve, ejemplo: mostrar información de usuarios, productos, etc.].
-
----
-
-## 🚀 Tecnologías Utilizadas
-
-- ⚛️ React.js (Vite)
-- 📦 Axios (consumo de API)
-- 💅 CSS/SCSS o Tailwind (estilos)
-- 🔐 JWT (si aplica autenticación)
-- 🌐 API RESTful (backend externo)
+Aplicación frontend construida con **React.js + Vite**, que consume la **Rick and Morty API** para mostrar personajes y detalles relevantes de la serie.
 
 ---
 
-## 📁 Estructura del Proyecto
+## 📸 Vista previa
 
-```
-
-nombre-proyecto/
-├── public/
-├── src/
-│   ├── api/           # Lógica para llamadas HTTP
-│   ├── components/    # Componentes reutilizables
-│   ├── pages/         # Vistas principales
-│   ├── router/        # Configuración de rutas (React Router)
-│   ├── App.jsx
-│   └── main.jsx
-├── .env               # Variables de entorno (URL API)
-├── README.md
-└── package.json
-
-````
+> Muestra información como:
+- Imagen
+- Nombre
+- Estado (vivo, muerto, desconocido)
+- Género
+- Origen
+- Ubicación
+- Episodios en los que aparece
 
 ---
 
-## 🔧 Instalación y Configuración
+## 🚀 Tecnologías
 
-1. Clonar el repositorio:
+- ⚛️ React.js + Vite (Frontend)
+- 🔗 Axios (Consumo de API)
+- 🧭 React Router DOM (Navegación)
+- 💅 CSS personalizado / Tailwind (opcional)
+- 🌐 Rick and Morty API - [https://rickandmortyapi.com](https://rickandmortyapi.com)
+
+---
+
+## ⚙️ Instalación
+
+### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/nombre-proyecto.git
-cd nombre-proyecto
+git clone https://github.com/tu-usuario/rick-and-morty-explorer.git
+cd rick-and-morty-explorer
 ````
 
-2. Instalar dependencias:
+### 2. Instala las dependencias
 
 ```bash
 npm install
 ```
 
-3. Crear archivo `.env`:
-
-```env
-VITE_API_URL=http://localhost:8079/api
-```
-
-> Cambia la URL por la de tu backend si es diferente.
-
-4. Ejecutar la app:
+### 3. Ejecuta el servidor de desarrollo
 
 ```bash
 npm run dev
@@ -66,46 +50,64 @@ npm run dev
 
 ---
 
-## 📡 Ejemplo de Consumo de API (usando Axios)
+## 🌐 Estructura del Proyecto
+
+```
+src/
+├── api/                # Lógica para consumo de la API
+├── components/         # Componentes reutilizables (CharacterCard, etc.)
+├── pages/              # Vistas como Home o Detalle
+├── router/             # Definición de rutas
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## 🔁 Ejemplo de consumo de la API
 
 ```js
-// src/api/userApi.js
+// src/api/characterApi.js
+
 import axios from 'axios';
 
-const API = import.meta.env.VITE_API_URL;
+const BASE_URL = 'https://rickandmortyapi.com/api';
 
-export const getUsers = async () => {
-  const response = await axios.get(`${API}/users`);
+export const getCharacterById = async (id) => {
+  const response = await axios.get(`${BASE_URL}/character/${id}`);
   return response.data;
 };
 ```
 
 ---
 
-## 🔐 Autenticación (si aplica)
+## 🧪 Funcionalidades
 
-* Login con JWT
-* Almacena token en `localStorage` o `sessionStorage`
-* Protección de rutas con React Router
-
----
-
-## 📌 TODO / Pendientes
-
-* [ ] Implementar login
-* [ ] Crear componente de tabla de datos
-* [ ] Manejo de errores y loading
-* [ ] Validaciones de formularios
+* 🔍 Buscar personaje por ID
+* 📄 Vista detallada de personaje
+* 🧠 Estado, origen y localización
+* 🎬 Número de episodios donde aparece
+* 🔗 Enlace directo a la API oficial
 
 ---
 
-## 🤝 Contribuciones
+## 📌 Pendientes / TO-DO
 
-¡Contribuciones, sugerencias y mejoras son bienvenidas!
+* [ ] Filtro por especie, estado o género
+* [ ] Paginación
+* [ ] Vista general de todos los personajes
+* [ ] Mejora en estilos con Tailwind o CSS Modules
+* [ ] Manejo de errores y estados de carga
+
+---
+
+## 👨‍💻 Autor
+
+* **Tu Nombre**
+* GitHub: [@tu-usuario](https://github.com/tu-usuario)
 
 ---
 
 ## 📄 Licencia
 
-Este proyecto está bajo la licencia [MIT](LICENSE).
-
+Este proyecto está bajo la licencia MIT.
